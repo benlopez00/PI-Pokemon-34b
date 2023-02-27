@@ -8,7 +8,7 @@ router.get('/', async (req, res) => {
     let { name, typeFilter, order, created } = req.query
 
     try {
-        if (created !== 'default' && created == true) {
+        if (created) {
             const createdInDb = await Pokemon.findAll({ where: { createdDb: created } });
             if (!createdInDb.length) {
                 return res.send({ msg: "You still haven't catched any new pokemon :(" })

@@ -7,7 +7,7 @@ const getPokemonsFromApi = async () => {
     var arrayPokedex = [];
     for (var i = 0; i < mapUrl.length; i++) {
         const url = await axios(mapUrl[i])
-        arrayPokemones.push({
+        arrayPokedex.push({
             idPoke: url.data.id,
             name: url.data.name,
             height: url.data.height,
